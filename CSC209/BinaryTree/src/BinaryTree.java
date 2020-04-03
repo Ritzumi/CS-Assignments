@@ -49,4 +49,58 @@ public class BinaryTree {
         return null;
     }
 
+    public int length() {
+        return length(root);
+    }
+
+    private int length(Node node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return length(node.left) + length(node.right) + 1;
+        }
+    }
+
+    public int leaves() {
+        return leaves(root);
+    }
+
+    private int leaves(Node node) {
+        if (node == null) {
+            return 0;
+        } else if (node.left == null && node.right == null) {
+            return 1;
+        } else {
+            return leaves(node.left) + leaves(node.right);
+        }
+    }
+
+    public int rightChildren() {
+        return rightChildren(root);
+    }
+
+    private int rightChildren(Node node) {
+        if (node == null) {
+            return 0;
+        } else if (node.right != null) {
+            return rightChildren(node.left) + rightChildren(node.right) + 1;
+        } else {
+            return rightChildren(node.left) + rightChildren(node.right);
+        }
+    }
+
+    public int height() {
+        return height(root);
+    }
+
+    private int height(Node node) {
+        if (node == null) {
+            return 0;
+        } else if (node.left != null || node.right != null) {
+            return Math.max(height(node.left) + 1, height(node.right) + 1);
+        } else {
+            return 1;
+        }
+    }
+
 }

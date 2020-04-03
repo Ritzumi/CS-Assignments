@@ -18,6 +18,10 @@ public class BinarySearchTreeLab {
         tree.search(93);
         tree.search(110);
         tree.search(35);
-
+        //Exercise
+        System.out.println(tree.length());
+        System.out.println(tree.leaves());
+        System.out.println(tree.rightChildren());
+        System.out.println(tree.height());
     }
 }
