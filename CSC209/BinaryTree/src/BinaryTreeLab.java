@@ -1,4 +1,4 @@
-public class BinarySearchTreeLab {
+public class BinaryTreeLab {
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
         tree.insert(25);
