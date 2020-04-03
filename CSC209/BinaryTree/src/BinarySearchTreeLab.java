@@ -23,5 +23,10 @@ public class BinarySearchTreeLab {
         System.out.println(tree.leaves());
         System.out.println(tree.rightChildren());
         System.out.println(tree.height());
+        //Transverse
+        tree.breadthTraversal();
+        tree.preorder();
+        tree.inorder();
+        tree.postorder();
     }
 }

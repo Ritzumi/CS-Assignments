@@ -103,4 +103,64 @@ public class BinaryTree {
         }
     }
 
+    public void breadthTraversal() { // level
+        Node p = root;
+        Queue<Node> queue = new LinkedList<>();
+        if (p != null) {
+            queue.add(p);
+            while (!queue.isEmpty()) {
+                p = queue.poll();
+                System.out.print(p.info + " ");
+                if (p.left != null) {
+                    queue.add(p.left);
+                }
+                if (p.right != null) {
+                    queue.add(p.right);
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public void preorder() {
+        preorder(root);
+        System.out.println();
+    }
+
+    private void preorder(Node node) {
+        if (node != null) {
+            System.out.print(node.info + " "); // V
+            preorder(node.left); // L
+            preorder(node.right); // R
+        }
+
+    }
+
+    public void inorder() {
+        inorder(root);
+        System.out.println();
+    }
+
+    private void inorder(Node node) {
+        if (node != null) {
+            inorder(node.left);
+            System.out.print(node.info + " ");
+            inorder(node.right);
+        }
+
+    }
+
+    public void postorder() {
+        postorder(root);
+        System.out.println();
+    }
+
+    private void postorder(Node node) {
+        if (node != null) {
+            postorder(node.left);
+            postorder(node.right);
+            System.out.print(node.info + " ");
+        }
+
+    }
 }
