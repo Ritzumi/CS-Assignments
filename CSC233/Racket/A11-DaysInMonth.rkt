@@ -1,5 +1,4 @@
 ;Use R5RS language !!!
-
 (define (DaysInMonth sym)
   (cond
     ((equal? sym 'JANUARY) 31)
