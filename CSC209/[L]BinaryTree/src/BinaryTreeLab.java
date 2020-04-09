@@ -18,15 +18,23 @@ public class BinaryTreeLab {
         tree.search(93);
         tree.search(110);
         tree.search(35);
+
         //Exercise
-        System.out.println(tree.length());
-        System.out.println(tree.leaves());
-        System.out.println(tree.rightChildren());
-        System.out.println(tree.height());
-        //Transverse
-        tree.breadthTraversal();
-        tree.preorder();
+//        System.out.println(tree.length());
+//        System.out.println(tree.leaves());
+//        System.out.println(tree.rightChildren());
+//        System.out.println(tree.height());
+
+        // Part2
+        tree.insert(200);
+        System.out.println(tree.root.right.right.info);
+        System.out.print("Inorder: ");
         tree.inorder();
+        System.out.print("Preorder: ");
+        tree.preorder();
+        System.out.print("Postorder: ");
         tree.postorder();
+        System.out.print("Breadth-first: ");
+        tree.breadthTraversal();
     }
 }
