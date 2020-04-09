@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 public class BinaryTree {
     Node root;
@@ -158,6 +159,70 @@ public class BinaryTree {
             postorder(node.left);
             postorder(node.right);
             System.out.print(node.info + " ");
+        }
+    }
+
+    public void iterativePreorder() {
+        Node node = root;
+        Stack<Node> stack = new Stack<>();
+        if (node != null) {
+            stack.push(node);
+            while (stack.isEmpty()) {
+                node = stack.pop();
+                System.out.print(node.info + " ");
+                if (node.right != null) {
+                    stack.push(node.right);
+                }
+                if (node.left != null) {
+                    stack.push(node.left);
+                }
+            }
+        }
+    }
+
+    public void iterativeInorder() {
+        Node node = root;
+        Stack<Node> stack = new Stack<>();
+        while (node != null) {
+            while (node != null) {
+                if (node.right != null) {
+                    stack.push(node.right);
+                }
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            while (!stack.isEmpty() && node.right == null) {
+                System.out.print(node.info + " ");
+                node = stack.pop();
+            }
+            System.out.print(node.info + " ");
+            if (!stack.isEmpty()) {
+                node = stack.pop();
+            } else {
+                node = null;
+            }
+        }
+        System.out.println();
+    }
+
+    public void iterativePostorder() {
+        Node node = root, node1 = root;
+        Stack<Node> stack = new Stack<>();
+        while (node != null) {
+            for (; node.left != null; node = node.left) {
+                stack.push(node);
+            }
+            while (node != null && (node.right == null || node.right == node1)){
+                System.out.print(node.info + " ");
+                node1 = node;
+                if(stack.isEmpty()){
+                    return;
+                }
+                node = stack.pop();
+            }
+            stack.push(node);
+            node = node.right;
         }
     }
 }
