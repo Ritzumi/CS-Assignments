@@ -133,7 +133,6 @@ public class BinaryTree {
             preorder(node.left); // L
             preorder(node.right); // R
         }
-
     }
 
     public void inorder() {
@@ -147,7 +146,6 @@ public class BinaryTree {
             System.out.print(node.info + " ");
             inorder(node.right);
         }
-
     }
 
     public void postorder() {
@@ -161,6 +159,5 @@ public class BinaryTree {
             postorder(node.right);
             System.out.print(node.info + " ");
         }
-
     }
 }
