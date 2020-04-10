@@ -213,10 +213,10 @@ public class BinaryTree {
             for (; node.left != null; node = node.left) {
                 stack.push(node);
             }
-            while (node != null && (node.right == null || node.right == node1)){
+            while (node != null && (node.right == null || node.right == node1)) {
                 System.out.print(node.info + " ");
                 node1 = node;
-                if(stack.isEmpty()){
+                if (stack.isEmpty()) {
                     return;
                 }
                 node = stack.pop();
@@ -225,4 +225,43 @@ public class BinaryTree {
             node = node.right;
         }
     }
+
+    public void deleteByMerging(int value) {
+        Node pointer = root, prev = null;
+        while (pointer != null && pointer.info != value) {
+            prev = pointer;
+            if (pointer.info < value) {
+                pointer = pointer.right;
+            } else {
+                pointer = pointer.left;
+            }
+        }
+        Node node = pointer;
+        if (pointer != null) {
+            if (pointer.right == null) {
+                node = pointer.left;
+            } else if (pointer.left == null) {
+                node = pointer.right;
+            } else {
+                Node temp = pointer.left;
+                while (temp.right != null) {
+                    temp = temp.right;
+                }
+                temp.right = pointer.right;
+                node = pointer.left;
+            }
+            if (pointer == root) {
+                root = node;
+            } else if (prev.left == pointer) {
+                prev.left = node;
+            } else {
+                prev.right = node;
+            }
+        } else if (root != null) {
+            System.out.println("Not found");
+        } else {
+            System.out.println("Empty tree");
+        }
+    }
+
 }
