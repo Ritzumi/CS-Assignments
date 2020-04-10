@@ -1,0 +1,10 @@
+(define (double-it lst)
+  (define (more li newlst)
+    (define temp (append newlst (list (* (CAR li) 2))))
+    (cond
+      ((eq? (length li) 1) (display temp))
+      (else (more (CDR li) temp))
+      )
+    )
+    (if (eq? (length lst) 0) "Empty list" (more lst (list)))
+  )
