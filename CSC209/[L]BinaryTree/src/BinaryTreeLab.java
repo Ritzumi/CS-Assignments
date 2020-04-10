@@ -36,5 +36,13 @@ public class BinaryTreeLab {
         tree.postorder();
         System.out.print("Breadth-first: ");
         tree.breadthTraversal();
+
+        //Part3
+        System.out.println("Deleting 100");
+        System.out.print("Before " + tree.root.right.info + ":");
+        tree.deleteByMerging(100);
+        System.out.println(tree.root.right.info + " After");
+        tree.breadthTraversal();
+        System.out.println(tree.root.right.right.right.right.right.info);
     }
 }
