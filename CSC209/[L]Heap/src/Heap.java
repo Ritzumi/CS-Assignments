@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Heap {
     int[] heap;
     int size;
@@ -64,5 +66,13 @@ public class Heap {
             rightIndex = 2*index+2;
         }
         return max;
+    }
+
+    public void myHeapSort(){
+        while (size != 1 || !isEmpty()){
+            int temp = this.dequeue();
+            heap[size] = temp;
+        }
+        System.out.println(Arrays.toString(heap));
     }
 }

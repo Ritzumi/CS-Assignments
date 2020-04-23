@@ -28,13 +28,16 @@ public class HeapDriver {
         }
         System.out.println();
         System.out.println(heap.heap[0]);
+
         //Dequeue
-        System.out.println("Dequeue");
-        System.out.println(heap.dequeue());
-        System.out.println(heap.dequeue());
-        while (!heap.isEmpty()){
-            System.out.print(heap.dequeue() + " ");
-        }
-        System.out.println();
+//        System.out.println("Dequeue");
+//        System.out.println(heap.dequeue());
+//        System.out.println(heap.dequeue());
+//        while (!heap.isEmpty()){
+//            System.out.print(heap.dequeue() + " ");
+//        }
+//        System.out.println();
+
+        heap.myHeapSort();
     }
 }
