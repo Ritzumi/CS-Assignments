@@ -49,7 +49,10 @@ public class OperationConverter {
         Stack<String> stack = new Stack<>();
         char[] chars = postfix.toCharArray();
         for (char c: chars) {
-            if(precedence(c) == 0){
+            if(c == ' '){
+                continue;
+            }
+            else if(precedence(c) == 0){
                 stack.push(String.valueOf(c));
             } else {
                 double temp2 = Double.parseDouble(stack.pop());
@@ -76,6 +79,7 @@ public class OperationConverter {
                         temp1 = Math.pow(temp1, temp2);
                         stack.push(String.valueOf(temp1));
                     }
+                    default: ;
                 }
             }
         }
