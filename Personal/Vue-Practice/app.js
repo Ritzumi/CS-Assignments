@@ -1,26 +1,45 @@
+Vue.component('greeting', {
+    template: '<p> Hello world {{name}}. <button v-on:click="changeName">Change Name</button></p>',
+    data: function(){
+        return {
+            name: 'Sherry'
+        }
+    },
+    methods:{
+        changeName: function(){
+            this.name = 'Sake'
+        }
+    }
+});
+
 new Vue({
-    el: '#vue-app',
+    el: '#vue-app-one',
 
     data:{
-        health: 100,
-        ended: false
+
     },
 
     methods:{
-        punch: function(){
-            this.health -= 10;
-            if(this.health <= 0){
-                this.ended = true;
-            }
-        },
-        restart: function(){
-            this.health = 100;
-            this.ended = false;
-        }
+
     },
 
     computed:{
 
     }
+});
 
+new Vue({
+    el: '#vue-app-two',
+
+    data:{
+
+    },
+
+    methods:{
+
+    },
+
+    computed:{
+
+    }
 });

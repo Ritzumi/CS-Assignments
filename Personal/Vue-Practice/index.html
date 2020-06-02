@@ -7,19 +7,14 @@
     <title>Vue tutorials</title>
 </head>
 <body>
-    <div id="vue-app">
-        <!-- bag images -->
-        <div id="bag" v-bind:class={brust:ended}></div>
-        <!-- bag health -->
-        <div id="bag-health">
-            <div v-bind:style="{width:health + '%'}"></div>
-        </div>
-        <!-- game control -->
-        <div id="controls">
-            <button @click="punch" v-show="!ended">Punch</button>
-            <button @click="restart">Restart</button>
-        </div>
+    <div id="vue-app-one">
+        <greeting></greeting>
     </div>
+
+    <div id="vue-app-two">
+        <greeting></greeting>
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> Production -->
     <script src="app.js"></script>
