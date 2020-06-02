@@ -8,13 +8,17 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1> Conditionals </h1>
-        <button v-on:click="error = !error">Toggle Error</button>
-        <button v-on:click="success = !success">Toggle Success</button>
-        <!-- <p v-if="error">Error</p>
-        <p v-else-if="success">Success</p> -->
-        <p v-show="error">Error</p>
-        <p v-show="success">Success</p>
+        <!-- bag images -->
+        <div id="bag" v-bind:class={brust:ended}></div>
+        <!-- bag health -->
+        <div id="bag-health">
+            <div v-bind:style="{width:health + '%'}"></div>
+        </div>
+        <!-- game control -->
+        <div id="controls">
+            <button @click="punch" v-show="!ended">Punch</button>
+            <button @click="restart">Restart</button>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> Production -->
