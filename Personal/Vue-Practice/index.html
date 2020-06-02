@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Vue tutorials</title>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>{{name}}</h1>
+        <h2>{{greet("Cat")}}</h2>
+        
+        <a v-bind:href="website">Facebook Link</a>
+        <input type="text" v-bind:value="name">
+        <p v-html="tag"></p>
+
+        <button v-on:click="add(1)" v-on:dblclick.once="add(8)">+</button>
+        <button v-on:click="substract(1)" v-on:dblclick.once="substract(8)">-</button>
+        <p>Year: {{year}}</p>
+        <div id="canvas" @mousemove="updateXY">{{x}}, {{y}}</div>
+
+        <a v-on:click.prevent="click()" v-bind:href="website">Facebook Link</a>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> Production -->
+    <script src="app.js"></script>
+</body>
+</html>
