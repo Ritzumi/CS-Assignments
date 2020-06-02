@@ -7,14 +7,14 @@
     <title>Vue tutorials</title>
 </head>
 <body>
-    <div id="vue-app-one">
-        <greeting></greeting>
+    <div id="vue-app">
+        <h1>Reference</h1>
+        <input type="text" placeholder="Guess" ref="input">
+        <button @click="readRef" >Submit</button>
+        <p>{{output}}</p>
+        <div ref="test"></div>
     </div>
 
-    <div id="vue-app-two">
-        <greeting></greeting>
-    </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> Production -->
     <script src="app.js"></script>
