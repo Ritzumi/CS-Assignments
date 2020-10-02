@@ -1,2 +1,2 @@
 # Yuuki-SIT-CS-Memories
-A sanctuary for my code. Everyone is welcome here... Except poacher!
+A sanctuary for my code. Grow like a tree... (Often too lazy to grow..)
