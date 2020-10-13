@@ -20,10 +20,11 @@ public class string2d {
         int[] location = {-1,-1};
         for (int row = 0; row < a.length; row++){
             for (int column = 0; column < a[0].length; column++){
-                boolean T = row - key.length() + 1 >= 0;
-                boolean B = (a.length - (row + 1)) - (key.length() - 1) >= 0;
-                boolean L = column - key.length() + 1 >= 0;
-                boolean R = (a[0].length - (column + 1)) - (key.length() - 1)  >= 0;
+                // Available slot - Will use slot
+                boolean T = row - (key.length() - 1) >= 0;
+                boolean B = ((a.length - 1) - row) - (key.length() - 1) >= 0;
+                boolean L = column - (key.length() - 1) >= 0;
+                boolean R = ((a[0].length - 1) - column) - (key.length() - 1)  >= 0;
                 int count = 0;
                 // Horizontal Forward
                 //column+count < key.length

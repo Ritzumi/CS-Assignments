@@ -28,11 +28,10 @@ public class Sudoku {
             for (int i = 0; i < 9 && filled < 81; i++) {
                 for (int j = 0; j < 9 && filled < 81; j++) {
                     if (table[i][j] == 0){
-                        int[] num = {1,2,3,4,5,6,7,8,9};
                         int count = 0;
                         int temp  = 0;
-                        for (int z: num) {
-                            if (check(table, z, i, j) && count < 2){
+                        for (int z = 1; z < 10 && count < 2; z++) {
+                            if (check(table, z, i, j)){
                                 count++;
                                 temp = z;
                             }
@@ -51,6 +50,7 @@ public class Sudoku {
         for (int[] i: table) {
             System.out.println(Arrays.toString(i));
         }
+        System.out.println(Arrays.deepToString(table));
 
     }
 
